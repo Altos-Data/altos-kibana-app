@@ -35,11 +35,11 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
   public setup(core: CoreSetup, plugins: WazuhSetupPlugins): WazuhSetup {
     core.application.register({
       id: `wazuh`,
-      title: 'Wazuh',
+      title: 'AltosLens',
       icon: '/plugins/wazuh/assets/icon_blue.png',
       mount: async (params: AppMountParameters) => {
         if (!this.initializeInnerAngular) {
-          throw Error('Wazuh plugin method initializeInnerAngular is undefined');
+          throw Error('AltosLens plugin method initializeInnerAngular is undefined');
         }
         setScopedHistory(params.history);
         // Load application bundle
@@ -63,7 +63,7 @@ export class WazuhPlugin implements Plugin<WazuhSetup, WazuhStart, WazuhSetupPlu
       },
       category: {
         id: 'wazuh',
-        label: 'Wazuh',
+        label: 'AltosLens',
         order: 0,
         euiIconType: '/plugins/wazuh/assets/icon_blue.png',      
       },
